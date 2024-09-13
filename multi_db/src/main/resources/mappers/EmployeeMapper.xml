@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.EmployeeMapper">
+
+    <resultMap id="employeeResultMap" type="Employee">
+        <result column="id" property="id" />
+        <result column="first_name" property="firstName" />
+        <result column="last_name" property="lastName" />
+        <result column="email" property="email" />
+        <result column="company_id" property="companyId" />
+    </resultMap>
+
+    <select id="getEmployees" resultMap="employeeResultMap">
+        SELECT id, first_name, last_name, "email", company_id FROM "employee";
+    </select>
+
+</mapper>
